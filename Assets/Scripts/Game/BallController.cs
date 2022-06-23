@@ -9,6 +9,7 @@ public class BallController : MonoBehaviour
     private Rigidbody rig;
 
     public ScoreManager scoreManager;
+    public SpawnManager spawnManager;
     public Collider gawangUp;
     public Collider gawangDown;
     public Collider gawangLeft;
@@ -26,21 +27,11 @@ public class BallController : MonoBehaviour
     void Update()
     {
 
-        if (transform.position.y < -5)
+        if (transform.position.y < -5 || spawnManager.loseCount.Count >= 3)
         {
             Destroy(gameObject);
         }
     }
-
-    /*
-    public void OnTriggerEnter(Collider other)
-    {
-        if(other == gwangUp)
-        {
-            Debug.Log("cccccccccccccccc");
-        }
-    }
-    */
 
     public void OnTriggerEnter(Collider collider)
     {
@@ -50,7 +41,7 @@ public class BallController : MonoBehaviour
                 //Debug.Log("Yes gup" + this);
                 scoreManager.AddPlayerUpScore(1);
             }
-            else if (collider == gawangUp)
+            else if (collider == gawangDown)
             {
                 //Debug.Log("Yes gdown" + this);
                 scoreManager.AddPlayerDownScore(1);

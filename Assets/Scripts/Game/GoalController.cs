@@ -5,8 +5,8 @@ using UnityEngine;
 public class GoalController : MonoBehaviour
 {
     public ScoreManager scoreManager;
-    public Collider ball;
-
+    //public Collider ball;
+    
     public enum gawangSign { none, gawangUp, gawangDown, gawangLeft, gawangRight };
 
     public gawangSign currentGawang;

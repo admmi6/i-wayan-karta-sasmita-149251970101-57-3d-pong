@@ -10,8 +10,6 @@ public class ScoreCanvasController : MonoBehaviour
     public Text scorePlayerLeft;
     public Text scorePlayerRight;
 
-    public Text winnerPlayer;
-
     public ScoreManager scoreManager;
 
     // Start is called before the first frame update

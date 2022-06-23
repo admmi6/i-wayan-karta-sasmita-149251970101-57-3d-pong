@@ -18,6 +18,8 @@ public class SpawnManager : MonoBehaviour
     public List<GameObject> spawnPoint;
     public GameObject selectedSpawnPoint;
 
+    public List<GameObject> loseCount;
+
 
     //public Vector3 areaMin;
     //public Vector3 areaMax;
@@ -41,7 +43,7 @@ public class SpawnManager : MonoBehaviour
 
     public void GenerateSpawnBall()
     {
-        if(ballList.Count >= maxSpawn)
+        if(loseCount.Count >= 3)
         {
             return;
         }
@@ -49,12 +51,11 @@ public class SpawnManager : MonoBehaviour
         int randomIndex = Random.Range(0, ballTemplateList.Count);
         int randomPoint = Random.Range(0, spawnPoint.Count);
         selectedSpawnPoint = spawnPoint[randomPoint];
-        ballClone = Instantiate(ballTemplateList[randomIndex], selectedSpawnPoint.transform.position, Quaternion.identity);
+        ballClone = Instantiate(ballTemplateList[randomIndex], selectedSpawnPoint.transform.position, Quaternion.identity, spawnArea);
 
         ballClone.SetActive(true);
 
         ballClone.GetComponent<Rigidbody>().AddForce(selectedSpawnPoint.transform.forward * forceSpeed, ForceMode.Impulse);
-        //Debug.Log("Ball cline + " + ballClone.GetComponent<Rigidbody>());
 
         ballList.Add(ballClone);
     }

@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public KeyCode keyRight;
     private Rigidbody rig;
 
+    public bool isOver;
+
     // Start is called before the first frame update
     void Start()
     {

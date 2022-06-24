@@ -20,10 +20,6 @@ public class SpawnManager : MonoBehaviour
 
     public List<GameObject> loseCount;
 
-
-    //public Vector3 areaMin;
-    //public Vector3 areaMax;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +40,11 @@ public class SpawnManager : MonoBehaviour
     public void GenerateSpawnBall()
     {
         if(loseCount.Count >= 3)
+        {
+            return;
+        }
+
+        if(ballList.Count >= maxSpawn)
         {
             return;
         }

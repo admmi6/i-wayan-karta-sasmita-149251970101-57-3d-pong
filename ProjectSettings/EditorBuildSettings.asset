@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pong3D.unity
     guid: aee1306613f639c4cba69d0a35cc8f72
-  - enabled: 1
-    path: Assets/Scenes/ReplayOrExit.unity
-    guid: 1c2fe6a114e55e343861b302b36eb3eb
   m_configObjects: {}

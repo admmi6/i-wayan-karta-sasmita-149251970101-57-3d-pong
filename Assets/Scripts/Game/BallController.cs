@@ -27,7 +27,13 @@ public class BallController : MonoBehaviour
     void Update()
     {
 
-        if (transform.position.y < -5 || spawnManager.loseCount.Count >= 3)
+        if (transform.position.y < -5)
+        {
+            Destroy(gameObject);
+            spawnManager.RemoveOutSpawnBall(gameObject);
+        }
+
+        if (spawnManager.loseCount.Count >= 3)
         {
             Destroy(gameObject);
         }
@@ -35,25 +41,20 @@ public class BallController : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
-      
             if (collider == gawangUp)
             {
-                //Debug.Log("Yes gup" + this);
                 scoreManager.AddPlayerUpScore(1);
             }
             else if (collider == gawangDown)
             {
-                //Debug.Log("Yes gdown" + this);
                 scoreManager.AddPlayerDownScore(1);
             }
             else if (collider == gawangLeft)
             {
-                //Debug.Log("Yes gleft" + this);
                 scoreManager.AddPlayerLeftScore(1);
             }
             else if (collider == gawangRight)
             {
-                //Debug.Log("Yes gright" + this);
                 scoreManager.AddPlayerRightScore(1);
             }
         

@@ -27,6 +27,11 @@ public class ScoreManager : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject hideBackBtn;
 
+    public GameObject gawangUp;
+    public GameObject gawangDown;
+    public GameObject gawangLeft;
+    public GameObject gawangRight;
+
     public GameObject winerPlayer;
     public Text finalWinner;
 
@@ -57,6 +62,7 @@ public class ScoreManager : MonoBehaviour
             spawnManager.loseCount.Add(pUp);
             pUp.SetActive(false);
             TembokUp.SetActive(true);
+            gawangUp.SetActive(false);
         }
     }
     public void AddPlayerDownScore(int incerement)
@@ -68,6 +74,7 @@ public class ScoreManager : MonoBehaviour
             spawnManager.loseCount.Add(pDowm);
             pDowm.SetActive(false);
             TembokDowm.SetActive(true);
+            gawangDown.SetActive(false);
         }
     }
     public void AddPlayerLeftScore(int incerement)
@@ -79,6 +86,7 @@ public class ScoreManager : MonoBehaviour
             spawnManager.loseCount.Add(pLeft);
             pLeft.SetActive(false);
             TembokLeft.SetActive(true);
+            gawangLeft.SetActive(false);
         }
     }
     public void AddPlayerRightScore(int incerement)
@@ -90,6 +98,7 @@ public class ScoreManager : MonoBehaviour
             spawnManager.loseCount.Add(pRight);
             pRight.SetActive(false);
             TembokRight.SetActive(true);
+            gawangRight.SetActive(false);
         }
     }
 

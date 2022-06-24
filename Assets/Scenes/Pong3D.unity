@@ -2617,6 +2617,10 @@ MonoBehaviour:
   spawnManager: {fileID: 254948225}
   gameOverPanel: {fileID: 1420832737}
   hideBackBtn: {fileID: 448373432}
+  gawangUp: {fileID: 1772991601}
+  gawangDown: {fileID: 435020954}
+  gawangLeft: {fileID: 1149444328}
+  gawangRight: {fileID: 1197046891}
   winerPlayer: {fileID: 0}
   finalWinner: {fileID: 2047768561}
 --- !u!4 &683660777
